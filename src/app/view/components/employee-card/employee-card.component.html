@@ -1,0 +1,17 @@
+<div class="card h-100">
+  <div class="card-body">
+    <h5 class="card-title">{{ employee.fullName }}</h5>
+    <p class="card-text">
+      <strong>Department:</strong> {{ employee.department }}<br>
+      <strong>Hire Date:</strong> {{ employee.hireDate }}<br>
+      <strong>Status:</strong> 
+      <span [ngClass]="employee.status === 'Active' ? 'text-success' : 'text-warning'">
+        {{ employee.status }}
+      </span>
+    </p>
+    <div class="d-flex gap-2">
+      <p-button label="Edit" icon="pi pi-pencil" (click)="onEdit()"></p-button>
+      <p-button label="Delete" icon="pi pi-trash" severity="danger" (click)="onDelete()"></p-button>
+    </div>
+  </div>
+</div>
