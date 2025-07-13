@@ -1,0 +1,17 @@
+
+<h1>Welcome to our Zitadel Demo</h1>
+<br>
+
+<ng-container *ngIf="(hasValidAccessToken) as isAuthenticated; else notAuthenticated">
+    <p><strong>You are authenticated</strong></p>
+    <button [routerLink]="['/user']">Show  User Profile</button>
+</ng-container>
+
+<ng-template #notAuthenticated>
+    <p><strong>You are not authenticated</strong>
+    <br>
+    Login again to see the user profile
+    
+    </p>
+    <button (click)="tiggerAuthentication()">Login</button>
+</ng-template>

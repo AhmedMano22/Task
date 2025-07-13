@@ -1,0 +1,10 @@
+<p><strong>Successfully authenticated</strong></p>
+
+ <p *ngIf="user$ | async as user">
+   <span class="user-info">Name: {{ user.info.name }}</span><br>
+  <span class="user-info">Email: {{ user.info.email }}</span><br>
+  <span class="user-info">Username: {{ user.info.preferred_username }}</span>
+</p>
+
+
+<button (click)="triggerSignout()">signout</button>
